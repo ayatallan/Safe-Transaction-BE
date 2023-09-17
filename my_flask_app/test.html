@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    const data = {
+      "Card Type": "Visa Classic Debit",
+      "Transaction Type": "Withdrawal",
+      "Transaction Type Group": "ATM Transactions",
+      "Channel ": "Purchase",
+      "Entry Mode": "Chip & Pin",
+      "Outlet ID": "400002102",
+      "Merchant Country": "Palestine",
+      "Merchant Activity ": "Cash withdrawal from the ATM",
+      "Client Code": "P00570492",
+      "Amount USD": 28
+    };
+
+    fetch("http://localhost:5000/fraud", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error("Error:", error));
+  </script>
+</body>
+</html>

@@ -20,7 +20,7 @@ mongoose.connect(MONGO_URL)
 
 app.use('/transaction', transactionsRouter);
 
-const port = 3002;
+const port = 3003;
 
 app.listen(port, () =>
     console.log(`Server running on port ${port}`)
